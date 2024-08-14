@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "functional": "c",
+        "type_traits": "c",
+        "algorithm": "c",
+        "random": "c"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
+}
