@@ -1,42 +1,36 @@
 #include<stdio.h>
-void bubsort(int arr[],int n){
-    int c;
-    int swapped;
-    for(int i=0;i<n-1;i++){
-        swapped=0;
-        for(int j=0;j<n-i-1;j++){
-            if(arr[j]>arr[j+1]){
-                c=arr[j];
-                arr[j]=arr[j+1];
-                arr[j+1]=c;
-                swapped=1;
-            }
-        }
-        if(swapped==0){
-            break;
-        }
+#include<math.h>
+int count(int n){
+    int r;
+    int c=0;
+    while(n!=0){
+        r=n%10;
+        c++;
+        n/=10;
     }
-    for(int i=0;i<n;i++){
-        printf("%d  ",arr[i]);
+    return (c);
+}
+int  arms(int n){
+    int r,sum=0;
+    int ogno=n;
+    int c=count(n);
+    while(n!=0){
+        r=n%10;
+        sum+=pow(r,c);
+        n/=10;
     }
-    printf("\n");
+    return (ogno==sum);
 }
 int main(){
     int a;
-    printf("Enter the size of the array: ");
+    printf("Enter the no. to check it is armstrong or not : ");
     scanf("%d",&a);
-    int arr[a];
-    printf("Enter %d elements in the array: ");
-    for(int i=0;i<a;i++){
-        scanf("%d",&arr[i]);
+    int n=arms(a);
+    if(n==1){
+        printf("It is an armstrong no.!!!!!");
     }
-    printf("\n");
-    printf("Elemnets enetered by the user in the array: \n");
-    for(int i=0;i<a;i++){
-        printf("%d  ",arr[i]);
+    else if(n==0){
+        printf("It is not an armstrong no. !!!!!");
     }
-    printf("\n");
-    printf("Elements of the arrayy after getting sorteed is: \n");
-    bubsort(arr,a);
     return 0;
 }
