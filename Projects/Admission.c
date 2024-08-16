@@ -15,6 +15,6 @@ int main(){
     fgets(schoolname,300,stdin);
     printf("Enter the school boarde: ");
     fgets(schoolboard,100,stdin);
-    printf("Enter the date of borth of the student:");
+    printf("Enter thes date of borth of the student:");
     return 0;
 }
