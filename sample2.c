@@ -2,13 +2,13 @@
 
 int main(){
     int a;
-    printf("Enter a no. :");
+    printf("Enter the no :");
     scanf("%d",&a);
-    if(a%3==0 ||a%7==0){
-        printf("True!!!!!");
+    if(100<a<200){
+        printf("True!!!!");
     }
     else{
-        printf("False!!!");
+        printf("False!!!!");
     }
     return 0;
 }
