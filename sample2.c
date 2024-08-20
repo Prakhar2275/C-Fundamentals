@@ -1,25 +1,27 @@
-//Write a C program to check whether the sequence of numbers 1, 2, 3 appears in a given array of integers somewhere.
+//Write a C program to check if two given non-negative integers have the same last digit.
+
 #include<stdio.h>
+#include<math.h>
+
 int main(){
-    int a;
-    printf("Ehter the size of the array: ");
+    int a,b;
+    printf("Enter the first no. :");
     scanf("%d",&a);
-    int arr[a];
-    printf("Enter %d elements in the array: \n");
-    for(int i=0;i<a;i++){
-        scanf("%d",&arr[i]);
-    }
-    printf("Entered array by the user: \n");
-    for(int i=0;i<a;i++){
-        printf("%d  ",arr[i]);
-    }
-    
-    for(int j=0;j<a-3;j++){
-        if(arr[j]==1 && arr[j+1]==2 && arr[j+2]){
-            printf("True!!!!!");
+    printf("Enter the second no. :");
+    scanf("%d",&b);
+    int r1,r2;
+    r1=a%10;
+    r2=b%10;
+    if(a>0 && b>0){
+        if(r1==r2){
+            printf("Both the numbers have same last digit!!!!");
+        }
+        else{
+            printf("Both no. do not have same last digit!!!");
         }
     }
-
+    else{
+        printf("Wrong Input!!!!!");
+    }
     return 0;
-    
 }
