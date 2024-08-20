@@ -1,27 +1,28 @@
-//Write a C program to check if two given non-negative integers have the same last digit.
-
 #include<stdio.h>
-#include<math.h>
-
 int main(){
-    int a,b;
-    printf("Enter the first no. :");
+    int a;
+    printf("Enter the size of the array: ");
     scanf("%d",&a);
-    printf("Enter the second no. :");
-    scanf("%d",&b);
-    int r1,r2;
-    r1=a%10;
-    r2=b%10;
-    if(a>0 && b>0){
-        if(r1==r2){
-            printf("Both the numbers have same last digit!!!!");
-        }
-        else{
-            printf("Both no. do not have same last digit!!!");
+    int arr[a];
+    printf("Enter %d characters in the array: ",a);
+    for(int i=0;i<a;i++){
+        scanf("%d",&arr[i]);
+    }
+    printf("\n");
+    printf("Elements entered in the arrayy: \n");
+    for(int i=0;i<a;i++){
+        printf("%d  ",arr[i]);
+    }
+    printf("\n");
+    int i;
+    for(i=0;i<a-3;i++){
+        if(arr[i]==1 && arr[i+1]==2 &&  arr[i+2]==3){
+            printf("Entered array have that provided seuence in it");
+            break;
         }
     }
-    else{
-        printf("Wrong Input!!!!!");
+    if(i==a-3){
+        printf("Given sequence not founded inside the array!!!");
     }
     return 0;
 }
