@@ -1,15 +1,15 @@
 #include<stdio.h>
 int main(){
     int a,b;
-    printf("Enter the first no. :");
+    printf("Enter the first no.:");
     scanf("%d",&a);
-    printf("Enter the second no. :");
+    printf("Enter the second nno. :");
     scanf("%d",&b);
-    int sum;
-    sum=a+b;
-    if(10<sum<20){
-        printf("The answer is 30!!!");
+    if(a==5 || b==5  || a+b==5  || a-b==5  ||  b-a==5){
+        printf("True!!!");
     }
-    printf("The real answer is %d",sum);
+    else{
+        printf("False!!!");
+    }
     return 0;
 }
