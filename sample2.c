@@ -1,33 +1,43 @@
 #include<stdio.h>
 
-int isprime(int a);
-int isprime(int a){
-    int i;
-    for(i=2;i<=a;i++){
-        if(a%i==0){
-            return 1;
+int bubsort(int arr[],int n){
+    int c;
+    int swapped;
+    for(int i=0;i<n-1;i++){
+        swapped=0;
+        for(int j=0;j<n-1-i;j++){
+            if(arr[j]>arr[j+1]){
+                c=arr[j];
+                arr[j]=arr[j+1];
+                arr[j+1]=c;
+                swapped=1;
+            }
+        }
+        if(swapped==0){
+            break;
         }
     }
-    if(i==a){
-        return 0;
+    printf("Array after getting swapped: \n");
+    for(int i=0;i<n;i++){
+        printf("%d  ",arr[i]);
     }
+    printf("\n");
 }
 
 int main(){
     int a;
-    printf("Enter the no you want to divide : ");
+    printf("Enter the size of the arrya: ");
     scanf("%d",&a);
-    int i;
-    for(i=1;i<=a/2;i++){
-        if(isprime(i)==0 && isprime(a-i)==0){
-            printf("Two partts  oof this no. is %d and %d.",i,a-i);
-            return 0;
-        }
-        
+    int arr[a];
+    printf("Enter %d characters in the array: \n");
+    for(int i=0;i<a;i++){
+        scanf("%d",&arr[i]);
     }
-
-    if(i==(a/2)-1){
-        printf("Entered no. cant be seprated in this form!!!!");
+    printf("Array before Getting swapped: \n");
+    for(int i=0;i<a;i++){
+        printf("%d  ",arr[i]);
     }
+    printf("\n");
+    bubsort(arr,a);
     return 0;
 }
